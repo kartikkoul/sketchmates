@@ -3,7 +3,8 @@
     "scripts": {
         "prisma": "prisma",
         "generate": "prisma generate",
-        "migrate": "prisma migrate dev"
+        "migrate": "prisma migrate dev",
+        "build": "tsc --b"
     },
     "exports": {
         ".": "./src/index.ts"
