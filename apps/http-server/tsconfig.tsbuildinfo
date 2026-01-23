@@ -1,0 +1,1 @@
+{"root":["./src/env-vars.ts","./src/index.ts","./src/db/db_queries.ts","./src/middlewares/v1middlewares.ts","./src/routes/v1/v1router.ts","./src/utils/randomcodegenerator.ts"],"version":"5.9.2"}

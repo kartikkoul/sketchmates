@@ -1,0 +1,25 @@
+{
+  "name": "@repo/ui",
+  "version": "1.0.0",
+  "exports": {
+    "./icons": {
+      "types": "./src/icons/index.ts",
+      "default": "./src/icons/index.ts"
+    },
+    "./components": {
+      "types": "./src/components/index.ts",
+      "default": "./src/components/index.ts"
+    }
+  },
+  "dependencies": {
+    "framer-motion": "^12.29.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "^4"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  }
+}
