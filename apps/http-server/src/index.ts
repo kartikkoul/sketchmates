@@ -9,10 +9,9 @@ app.use(cors());
 
 app.use("/api/v1", v1Router);
 
-if(HTTP_PORT){
-    app.listen(HTTP_PORT, async () => {
-      console.log("HTTP SERVER STARTED");
-    });
-}
+const PORT = HTTP_PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`HTTP server running on port ${PORT}`);
+});
 
 export default app;
