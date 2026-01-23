@@ -10,7 +10,7 @@ export const roomExists = async(req: Request, res: Response, next: NextFunction)
     if(!room){
         return res.status(404).json({
             message:"Room doesn't exist"
-        })
+        }) 
     }
 
     req.headers.roomId = room.roomId;
