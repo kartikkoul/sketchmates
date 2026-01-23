@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { type Request, type Response, Router } from "express";
 import { roomExists } from "../../middlewares/v1Middlewares.js";
 import { addSketch, closeRoom, createRoom, getRoomSketches } from "../../db/db_queries.js";
 

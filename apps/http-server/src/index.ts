@@ -1,9 +1,9 @@
-import express, {Express} from "express";
+import express, {type Application} from "express";
 import v1Router from "./routes/v1/v1Router.js";
 import cors from "cors";
 import { HTTP_PORT } from "./env-vars.js";
 
-const app : Express = express();
+const app : Application = express();
 app.use(express.json({ limit: "10mb" }));
 app.use(cors());
 

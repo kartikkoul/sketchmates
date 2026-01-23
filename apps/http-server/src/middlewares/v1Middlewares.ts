@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import type { NextFunction, Request, Response } from "express";
 import { getRoomOrNull } from "../db/db_queries.js";
 
 export const roomExists = async(req: Request, res: Response, next: NextFunction) => {
