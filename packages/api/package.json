@@ -1,7 +1,7 @@
 {
     "name": "@repo/api",
     "exports": {
-        ".": "./src/index.ts"
+        ".": "./src/index.js"
     },
     "devDependencies": {
         "@repo/typescript-config": "workspace:*",
