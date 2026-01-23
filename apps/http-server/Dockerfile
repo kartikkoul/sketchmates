@@ -11,7 +11,7 @@ RUN pnpm install --frozen-lockfile
 RUN pnpm turbo run build --filter=@repo/database
 RUN pnpm turbo run build --filter=http-server
 
-WORKDIR /apps/http-server
+WORKDIR /app/apps/http-server
 EXPOSE 3000
 
 CMD ["pnpm", "start"]
