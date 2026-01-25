@@ -9,7 +9,6 @@ RUN pnpm install --frozen-lockfile
 
 # Build ALL required packages
 RUN pnpm turbo run build
-# RUN pnpm turbo run build --filter=http-server
 
 WORKDIR /app/apps/http-server
 EXPOSE 3000
