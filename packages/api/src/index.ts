@@ -1,7 +1,7 @@
 import axios from "axios";
-import "dotenv/config";
 
-const BASE_URL = process.env.BASE_DOMAIN_OR_IP + "/api/v1/"
+const BASE_DOMAIN_OR_IP = "http://localhost:5000";
+const BASE_URL = BASE_DOMAIN_OR_IP + "/api/v1/"
 
 const baseRouter = axios.create({
     baseURL: BASE_URL,
