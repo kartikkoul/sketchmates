@@ -2,7 +2,9 @@
     "extends": "@repo/typescript-config/prisma.json",
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": "src"
+        "rootDir": "src",
+        "composite": true,
+        "incremental": true
      },
      "include": ["src"]
 }
