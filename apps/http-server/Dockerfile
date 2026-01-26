@@ -7,7 +7,7 @@ COPY . .
 
 RUN pnpm install --frozen-lockfile
 
-# Build ALL required packages
+# Let Turbo resolve dependency order
 RUN pnpm turbo run build
 
 WORKDIR /app/apps/http-server
