@@ -1,10 +1,19 @@
 {
   "name": "@repo/database",
   "type": "module",
-  "exports":{
-    ".": "./src/index.ts"
+
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "scripts": {
+    "build": "tsc --b",
     "prisma_generate": "prisma generate"
   },
   "devDependencies": {
