@@ -16,6 +16,10 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "prisma_generate": {
+      "cache": false,
+      "persistent": false
     }
   }
 }

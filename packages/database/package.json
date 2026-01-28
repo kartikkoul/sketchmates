@@ -4,6 +4,9 @@
   "exports":{
     ".": "./src/index.ts"
   },
+  "scripts": {
+    "prisma_generate": "prisma generate"
+  },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20",
