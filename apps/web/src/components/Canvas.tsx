@@ -37,7 +37,7 @@ const CanvasElement = () => {
 
   useEffect(() => {
     screenRef.current = screen;
-    const ws = new WebSocket("http://ws-sketchmates.kartikkoul.com/");
+    const ws = new WebSocket(process.env.NEXT_PUBLIC_WS_URL || "http://ws-sketchmates.kartikkoul.com/");
     webSocket.current = ws;
 
     ws.onopen = () => {
