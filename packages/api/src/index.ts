@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_DOMAIN_OR_IP = "http://localhost:5000";
+const BASE_DOMAIN_OR_IP = "http://api-sketchmates.kartikkoul.com";
 const BASE_URL = BASE_DOMAIN_OR_IP + "/api/v1/"
 
 const baseRouter = axios.create({

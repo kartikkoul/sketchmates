@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use("/api/v1", v1Router);
 
-const PORT = HTTP_PORT || 5000;
+const PORT = HTTP_PORT || 3000;
 app.listen(PORT, () => {
   console.log(`HTTP server running on port ${PORT}`);
 });
