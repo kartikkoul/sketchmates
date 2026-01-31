@@ -25,7 +25,7 @@ jobs:
             cd ${{ secrets.EC2_APP_DIR }}
             git pull origin main
             pnpm install
-            pnpm run build
+            pnpm run build 
             pm2 restart sketchmates-http
             pm2 restart sketchmates-ws
           EOF 
