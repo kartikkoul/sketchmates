@@ -14,7 +14,7 @@ jobs:
 
       - name: Setup SSH
         run: |
-          ls
+          ls ~
           mkdir -p ~/.ssh
           ls ~/.ssh
           echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
