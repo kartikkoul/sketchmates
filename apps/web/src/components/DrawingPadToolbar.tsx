@@ -126,7 +126,7 @@ const DrawingPadToolbar = () => {
               <li className="shareLink relative" onClick={shareLink}>
                 <div className="linkCopiedMessage">
                   {showLinkCopied && (
-                    <span className={`absolute top-8 -left-10 w-25 border rounded-xl text-xs p-2 ${connectedToWs ? "bg-gray-100 text-black w-25 border-black" : "bg-red-50 border-red-700 text-red-800"}`}>
+                    <span className={`absolute top-8 -left-10 max-w-25 border rounded-xl text-xs p-2 ${connectedToWs ? "bg-gray-100 text-black border-black" : "bg-red-50 border-red-700 text-red-800"}`}>
                       {connectedToWs ? "Link Copied!" : "You are offline! This is not sharable."}
                     </span>
                   )}
@@ -236,7 +236,7 @@ const DrawingPadToolbar = () => {
             <li className="shareLink relative" onClick={shareLink}>
               <div className="linkCopiedMessage">
                 {showLinkCopied && (
-                  <span className={`absolute top-12 -left-15 bg-gray-100 text-black w-40 border border-black rounded-xl text-sm p-2`}>
+                  <span className={`absolute top-12 -left-15 bg-gray-100 text-black max-w-40 border border-black rounded-xl text-sm p-2`}>
                     {connectedToWs ? "Link Copied!" : "You are offline! This is not sharable."}
                   </span>
                 )}
