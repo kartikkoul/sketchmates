@@ -14,9 +14,7 @@ jobs:
 
       - name: Setup SSH
         run: |
-          ls ~
           mkdir -p ~/.ssh
-          ls ~/.ssh
           echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
@@ -30,4 +28,4 @@ jobs:
             pnpm run build 
             pm2 restart sketchmates-http
             pm2 restart sketchmates-ws
-          EOF 
+          EOF
