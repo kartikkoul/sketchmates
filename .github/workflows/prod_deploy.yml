@@ -20,11 +20,14 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-            cd ${{ secrets.EC2_APP_DIR }}
-            git pull origin main
-            pnpm install 
-            pnpm run build 
-            pm2 restart sketchmates-http
-            pm2 restart sketchmates-ws
+          ssh \
+            -i ~/.ssh/id_ed25519 \
+            -o IdentitiesOnly=yes \
+            ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
+              cd ${{ secrets.EC2_APP_DIR }}
+              git pull origin main
+              pnpm install
+              pnpm run build
+              pm2 restart sketchmates-http
+              pm2 restart sketchmates-ws
           EOF
