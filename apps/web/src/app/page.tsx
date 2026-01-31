@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen w-screen bg-gray-100 ">
+    <div className="h-screen w-screen bg-gray-100 bg-[url('/background.svg')] bg-repeat">
       <main className="flex justify-center items-center h-full font-[Inter]">
         <div className="card border p-8 text-wrap bg-white rounded-2xl w-100">
           <div className="info text-center w-full">

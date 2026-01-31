@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <style>
+      .d {
+        fill: none;
+        stroke: #1f4fa3;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.35;
+      }
+    </style>
+  </defs>
+
+  <!-- Alien -->
+  <ellipse class="d" cx="80" cy="70" rx="18" ry="24"></ellipse>
+  <circle class="d" cx="74" cy="68" r="2"></circle>
+  <circle class="d" cx="86" cy="68" r="2"></circle>
+  <path class="d" d="M80 90 q-6 6 0 10 q6-4 0-10"></path>
+
+  <!-- UFO -->
+  <ellipse class="d" cx="220" cy="60" rx="30" ry="8"></ellipse>
+  <ellipse class="d" cx="220" cy="52" rx="14" ry="6"></ellipse>
+  <circle class="d" cx="210" cy="60" r="2"></circle>
+  <circle class="d" cx="220" cy="60" r="2"></circle>
+  <circle class="d" cx="230" cy="60" r="2"></circle>
+
+  <!-- Cat -->
+  <circle class="d" cx="380" cy="80" r="16"></circle>
+  <path class="d" d="M365 66 l-6 -10"></path>
+  <path class="d" d="M395 66 l6 -10"></path>
+  <circle class="d" cx="374" cy="78" r="2"></circle>
+  <circle class="d" cx="386" cy="78" r="2"></circle>
+  <path class="d" d="M374 86 q6 5 12 0"></path>
+
+  <!-- Rocket -->
+  <path class="d" d="M520 40 q16-20 32 0 q-16 40-32 0"></path>
+  <path class="d" d="M520 40 l-10 10"></path>
+  <path class="d" d="M552 40 l10 10"></path>
+
+  <!-- Stars -->
+  <path class="d" d="M100 180 l4 8 l8 4 l-8 4 l-4 8 l-4-8 l-8-4 l8-4 z"></path>
+  <path class="d" d="M300 160 l4 8 l8 4 l-8 4 l-4 8 l-4-8 l-8-4 l8-4 z"></path>
+
+  <!-- Planet -->
+  <circle class="d" cx="460" cy="180" r="18"></circle>
+  <ellipse class="d" cx="460" cy="180" rx="28" ry="8"></ellipse>
+
+  <!-- Random shapes -->
+  <path class="d" d="M60 300 q40-20 80 0"></path>
+  <path class="d" d="M240 320 q20-30 40 0"></path>
+  <path class="d" d="M400 300 q50-10 100 10"></path>
+
+  <!-- Floating Cat -->
+  <circle class="d" cx="140" cy="420" r="14"></circle>
+  <path class="d" d="M128 408 l-6 -8"></path>
+  <path class="d" d="M152 408 l6 -8"></path>
+
+  <!-- Alien again -->
+  <ellipse class="d" cx="320" cy="420" rx="14" ry="18"></ellipse>
+  <circle class="d" cx="314" cy="418" r="2"></circle>
+  <circle class="d" cx="326" cy="418" r="2"></circle>
+
+  <!-- UFO again -->
+  <ellipse class="d" cx="480" cy="420" rx="26" ry="7"></ellipse>
+  <ellipse class="d" cx="480" cy="414" rx="12" ry="5"></ellipse>
+
+</svg>

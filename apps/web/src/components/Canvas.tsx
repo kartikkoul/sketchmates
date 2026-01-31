@@ -19,6 +19,9 @@ const CanvasElement = () => {
   const errorTimer = useRef<ReturnType<typeof setTimeout>|null>(null);
   const screenRef = useRef<Screen>(null);
 
+  const BASE_WIDTH = 1920;
+  const BASE_HEIGHT = 1080;
+
   const updateError = (message : string) => {
     setError("")
     if(errorTimer.current){
@@ -28,11 +31,44 @@ const CanvasElement = () => {
     errorTimer.current = setTimeout(() => setError(""), 3000);
   }
 
+  function resizeCanvas() {
+  if(fabricCanvasRef.current){
+    const canvas = fabricCanvasRef.current;
+  
+    const containerWidth = screenRef.current?.width;
+    const containerHeight = screenRef.current?.height;
+  
+    if(containerHeight && containerWidth){
+      const scaleX = containerWidth / BASE_WIDTH;
+      const scaleY = containerHeight / BASE_HEIGHT;
+      const scale = Math.min(scaleX, scaleY);
+    
+      canvas.width = BASE_WIDTH * scale;
+      canvas.height = BASE_HEIGHT * scale;
+    
+      canvas.setZoom(scale);
+      canvas.requestRenderAll();
+    }
+  }
+
+}
+
   useEffect(() => {
     if (hasCanvasLoaded && pendingErrorRef.current) {
       updateError(pendingErrorRef.current);
       pendingErrorRef.current = null;
     }
+    if(
+      fabricCanvasRef.current
+    )resizeCanvas();
+
+     window.addEventListener("resize", resizeCanvas);
+     window.addEventListener("orientationchange", resizeCanvas);
+
+     return () => {
+       window.removeEventListener("resize", resizeCanvas);
+       window.removeEventListener("orientationchange", resizeCanvas);
+     };
   }, [hasCanvasLoaded]);
 
   useEffect(() => {
@@ -136,7 +172,7 @@ const CanvasElement = () => {
     {(!hasCanvasLoaded || isLoading) && <div className="absolute h-screen w-screen z-10 bg-white"><SketchLoader/></div>}
     
     <div className="drawingPad h-screen max-h-screen flex justify-center items-center">
-      <canvas ref={canvasRef} id="drawing-canvas" height={screenRef.current?.height} width={screenRef.current?.width}></canvas>
+      <canvas ref={canvasRef} id="drawing-canvas" width={BASE_WIDTH} height={BASE_HEIGHT}></canvas>
     </div>
     </>
   );
