@@ -28,4 +28,4 @@ jobs:
             pnpm run build
             pm2 restart sketchmates-http
             pm2 restart sketchmates-ws
-          EOF
+          EOF 
