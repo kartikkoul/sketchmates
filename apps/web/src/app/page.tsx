@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen w-screen bg-gray-100">
+    <div className="h-screen w-screen bg-gray-100 ">
       <main className="flex justify-center items-center h-full font-[Inter]">
         <div className="card border p-8 text-wrap bg-white rounded-2xl w-100">
           <div className="info text-center w-full">
@@ -33,7 +33,7 @@ export default function Home() {
             <p className="pt-8">Create a room & invite your friends to sketch together in real time</p>
           </div>
           <div className="actions flex justify-center pt-8">
-            <button className={"flex items-center border p-2 rounded-xl cursor-pointer hover:shadow-xl transition-shadow duration-300"}
+            <button className={"flex items-center border p-2 rounded-xl cursor-pointer hover:shadow-xl focus:shadow-xl transition-shadow duration-300"}
               onClick={createRoomHandler}
               disabled={loading}
             >

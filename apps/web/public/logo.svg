@@ -1,0 +1,51 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Paint gradient -->
+    <linearGradient id="paintGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"></stop>
+      <stop offset="40%" stop-color="#22D3EE"></stop>
+      <stop offset="70%" stop-color="#A855F7"></stop>
+      <stop offset="100%" stop-color="#F43F5E"></stop>
+    </linearGradient>
+
+    <!-- Wood handle gradient -->
+    <linearGradient id="woodGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5A2B"></stop>
+      <stop offset="100%" stop-color="#5C3A1A"></stop>
+    </linearGradient>
+
+    <!-- Metal ferrule -->
+    <linearGradient id="metalGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E5E7EB"></stop>
+      <stop offset="50%" stop-color="#9CA3AF"></stop>
+      <stop offset="100%" stop-color="#F9FAFB"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Paint stroke -->
+  <path d="M14 64 C26 52, 42 46, 64 34" stroke="url(#paintGradient)" stroke-width="12" stroke-linecap="round" opacity="0.9"></path>
+
+  <!-- Paint splashes -->
+  <circle cx="18" cy="62" r="2" fill="#6366F1"></circle>
+  <circle cx="22" cy="58" r="1.5" fill="#22D3EE"></circle>
+  <circle cx="28" cy="54" r="1.8" fill="#F43F5E"></circle>
+
+  <!-- Bristles -->
+  <path d="M52 28 C54 32, 60 36, 64 34
+       C68 32, 70 28, 68 26
+       C66 22, 56 22, 52 28 Z" fill="url(#paintGradient)"></path>
+
+  <!-- Individual bristle lines -->
+  <path d="M56 26 L60 34" stroke="#111827" stroke-width="0.6" opacity="0.3"></path>
+  <path d="M59 25 L63 33" stroke="#111827" stroke-width="0.6" opacity="0.3"></path>
+  <path d="M62 26 L66 32" stroke="#111827" stroke-width="0.6" opacity="0.3"></path>
+
+  <!-- Ferrule -->
+  <rect x="48" y="22" width="10" height="8" rx="2" transform="rotate(135 48 22)" fill="url(#metalGradient)"></rect>
+
+  <!-- Handle -->
+  <rect x="36" y="10" width="24" height="8" rx="4" transform="rotate(135 36 10)" fill="url(#woodGradient)"></rect>
+
+  <!-- Handle highlight -->
+  <path d="M40 14 L56 30" stroke="#FFFFFF" stroke-width="1" opacity="0.15"></path>
+</svg>

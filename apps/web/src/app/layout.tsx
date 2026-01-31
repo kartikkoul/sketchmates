@@ -5,6 +5,9 @@ import { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "SketchMates",
   description: "Draw what you imagine with your mates in real-time",
+  icons:{
+    icon:"/logo.svg"
+  }
 };
 
 
