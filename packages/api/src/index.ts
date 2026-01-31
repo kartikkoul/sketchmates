@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_DOMAIN_OR_IP = "http://api-sketchmates.kartikkoul.com";
+const BASE_DOMAIN_OR_IP = process.env.NODE_ENV == "production" ? "https://api-sketchmates.kartikkoul.com" : "http://localhost:3000";
 const BASE_URL = BASE_DOMAIN_OR_IP + "/api/v1/"
 
 const baseRouter = axios.create({
@@ -70,6 +70,7 @@ const getRoomSketches = async(roomId: string) => {
 };
 
 const addRoomSketch = async(roomId: string, sketchData: any) => {
+    console.log("ADD ROOM SKETCH");
     try{
         const resp = await baseRouter.post("/addSketch", {
             sketchData
