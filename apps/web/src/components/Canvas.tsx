@@ -32,43 +32,35 @@ const CanvasElement = () => {
   }
 
   function resizeCanvas() {
-  if(fabricCanvasRef.current){
-    const canvas = fabricCanvasRef.current;
-  
-    const containerWidth = screenRef.current?.width;
-    const containerHeight = screenRef.current?.height;
-  
-    if(containerHeight && containerWidth){
-      const scaleX = containerWidth / BASE_WIDTH;
-      const scaleY = containerHeight / BASE_HEIGHT;
-      const scale = Math.min(scaleX, scaleY);
-    
-      canvas.width = BASE_WIDTH * scale;
-      canvas.height = BASE_HEIGHT * scale;
-    
-      canvas.setZoom(scale);
-      canvas.requestRenderAll();
+    if (fabricCanvasRef.current) {
+      const canvas = fabricCanvasRef.current;
+      const drawingPad = canvas.getElement().parentElement;
+
+      if(!drawingPad) return;
+      const { width, height } = drawingPad?.getBoundingClientRect();
+
+      const containerWidth = width
+      const containerHeight = height;
+
+      if (containerHeight && containerWidth) {
+        const scaleX = containerWidth / BASE_WIDTH;
+        const scaleY = containerHeight / BASE_HEIGHT;
+        const scale = Math.min(scaleX, scaleY);
+
+        canvas.width = BASE_WIDTH * scale;
+        canvas.height = BASE_HEIGHT * scale;
+
+        canvas.setViewportTransform([scale, 0, 0, scale, 0, 0]);
+        canvas.requestRenderAll();
+      }
     }
   }
-
-}
 
   useEffect(() => {
     if (hasCanvasLoaded && pendingErrorRef.current) {
       updateError(pendingErrorRef.current);
       pendingErrorRef.current = null;
     }
-    if(
-      fabricCanvasRef.current
-    )resizeCanvas();
-
-     window.addEventListener("resize", resizeCanvas);
-     window.addEventListener("orientationchange", resizeCanvas);
-
-     return () => {
-       window.removeEventListener("resize", resizeCanvas);
-       window.removeEventListener("orientationchange", resizeCanvas);
-     };
   }, [hasCanvasLoaded]);
 
   useEffect(() => {
@@ -141,6 +133,8 @@ const CanvasElement = () => {
     if (isLoading || !canvasRef.current || fabricCanvasRef.current || !webSocket.current) return;
     fabricCanvasRef.current = new Canvas(canvasRef.current);
 
+     
+
     DrawingPadInit(
       fabricCanvasRef.current,
       webSocket.current,
@@ -149,12 +143,12 @@ const CanvasElement = () => {
       color,
     ).then(() => {
       setHasCanvasLoaded(true);
+      resizeCanvas();
     }).catch(e => console.error(e));
 
     if(webSocket.current.readyState == WebSocket.OPEN){
       setConnectedToWs(true);
     }
-
   }, [canvasRef, webSocket, isLoading]);
 
   useEffect(() => {
