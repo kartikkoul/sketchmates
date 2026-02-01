@@ -46,7 +46,7 @@ const CanvasElement = () => {
         const scaleX = containerWidth / BASE_WIDTH;
         const scaleY = containerHeight / BASE_HEIGHT;
         const scale = Math.min(scaleX, scaleY);
-
+        
         canvas.width = BASE_WIDTH * scale;
         canvas.height = BASE_HEIGHT * scale;
 
