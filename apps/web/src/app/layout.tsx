@@ -3,6 +3,8 @@ import "./globals.css";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sketchmates.kartikkoul.com"),
+  
   title: "SketchMates",
   description: "Draw what you imagine with your mates in real-time",
   icons:{
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
-  }
+  },
 };
 
 
