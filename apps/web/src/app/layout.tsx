@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "SketchMates",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://sketchmates.kartikkoul.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "SketchMates – collaborative drawing in real-time",
@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+
+  twitter: {
+  card: "summary_large_image",
+  images: ["https://sketchmates.kartikkoul.com/og-image.png"],
+},
 };
 
 
